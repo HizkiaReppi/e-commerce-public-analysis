@@ -14,12 +14,12 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Load dataset
 datetime_cols = ["order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date", "order_purchase_timestamp", "shipping_limit_date"]
-ecom_data = pd.read_csv("./datasets/e-commerce-df.csv")
+ecom_data = pd.read_csv("https://raw.githubusercontent.com/HizkiaReppi/e-commerce-public-analysis/main/datasets/e-commerce-df.csv")
 ecom_data.sort_values(by="order_approved_at", inplace=True)
 ecom_data.reset_index(inplace=True)
 
 # Load geolocation dataset
-geolocation = pd.read_csv('./datasets/customer_geolocation.csv')
+geolocation = pd.read_csv('https://raw.githubusercontent.com/HizkiaReppi/e-commerce-public-analysis/main/datasets/customer_geolocation.csv')
 geo_data = geolocation.drop_duplicates(subset='customer_unique_id')
 
 st.title("E-Commerce Analysis Dashboard")
